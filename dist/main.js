@@ -230,6 +230,17 @@ function () {
 
 /***/ }),
 
+/***/ "./src/data.json":
+/*!***********************!*\
+  !*** ./src/data.json ***!
+  \***********************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, default */
+/***/ (function(module) {
+
+module.exports = {"0":{"name":"Snikers #1","price":103.5,"image":"bg-01.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"1":{"name":"Snikers #2","price":152.14,"image":"bg-02.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"2":{"name":"Snikers #3","price":202.22,"image":"bg-03.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"3":{"name":"Snikers #4","price":240,"image":"bg-04.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"4":{"name":"Snikers #5","price":180.3,"image":"bg-05.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"5":{"name":"Snikers #6","price":186.5,"image":"bg-06.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"6":{"name":"Snikers #7","price":111.6,"image":"bg-07.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"7":{"name":"Snikers #8","price":169.64,"image":"bg-08.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"8":{"name":"LeBron 16 #9","price":215.2,"image":"bg-09.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"9":{"name":"Nike Zoom KD11 #10","price":245,"image":"bg-10.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"10":{"name":"Snikers #11","price":109.3,"image":"bg-05.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"11":{"name":"Snikers #12","price":198.5,"image":"bg-06.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"12":{"name":"Snikers #13","price":128.69,"image":"bg-01.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"13":{"name":"Snikers #14","price":179,"image":"bg-02.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"14":{"name":"Snikers #15","price":260.2,"image":"bg-03.jpg","description":"This is very cool snikers. Nice colorfull and quality"},"15":{"name":"Snikers #16","price":301.2,"image":"bg-03.jpg","description":"This is very cool snikers. Nice colorfull and quality"}};
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -247,9 +258,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var searchForm = new _search__WEBPACK_IMPORTED_MODULE_3__["SearchProduct"]();
+_page__WEBPACK_IMPORTED_MODULE_0__["Page"].setProducts(_page__WEBPACK_IMPORTED_MODULE_0__["Page"].loadProducts());
 var catalog = new _catalog__WEBPACK_IMPORTED_MODULE_2__["Catalog"](_page__WEBPACK_IMPORTED_MODULE_0__["Page"].getPerPage());
 var paginator = new _paginator__WEBPACK_IMPORTED_MODULE_1__["Paginator"](catalog);
+var searchForm = new _search__WEBPACK_IMPORTED_MODULE_3__["SearchProduct"](catalog, paginator);
 catalog.renderProducts(_page__WEBPACK_IMPORTED_MODULE_0__["Page"].getProducts(), _page__WEBPACK_IMPORTED_MODULE_0__["Page"].getCurrentPage(), paginator);
 paginator.createPagination(_page__WEBPACK_IMPORTED_MODULE_0__["Page"].getProducts());
 searchForm.createSearchHTML();
@@ -274,87 +286,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var currentPage = 0;
 var perPage = 6;
-var products = [{
-  "name": "Snikers #1",
-  "price": 103.50,
-  "image": "bg-01.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #2",
-  "price": 152.14,
-  "image": "bg-02.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #3",
-  "price": 202.22,
-  "image": "bg-03.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #4",
-  "price": 240.00,
-  "image": "bg-04.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #5",
-  "price": 180.30,
-  "image": "bg-05.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #6",
-  "price": 186.50,
-  "image": "bg-06.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #7",
-  "price": 111.60,
-  "image": "bg-07.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #8",
-  "price": 169.64,
-  "image": "bg-08.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "LeBron 16 #9",
-  "price": 215.20,
-  "image": "bg-09.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Nike Zoom KD11 #10",
-  "price": 245.00,
-  "image": "bg-10.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #11",
-  "price": 109.30,
-  "image": "bg-05.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #12",
-  "price": 198.50,
-  "image": "bg-06.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #13",
-  "price": 128.69,
-  "image": "bg-01.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #14",
-  "price": 179.00,
-  "image": "bg-02.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #15",
-  "price": 260.20,
-  "image": "bg-03.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}, {
-  "name": "Snikers #16",
-  "price": 301.20,
-  "image": "bg-03.jpg",
-  "description": "This is very cool snikers. Nice colorfull and quality"
-}];
+
+var _loadProducts = Object.values(__webpack_require__(/*! ./data.json */ "./src/data.json"));
+
+var products = [];
 var Page =
 /*#__PURE__*/
 function () {
@@ -363,6 +298,11 @@ function () {
   }
 
   _createClass(Page, null, [{
+    key: "loadProducts",
+    value: function loadProducts() {
+      return _loadProducts;
+    }
+  }, {
     key: "getCurrentPage",
     value: function getCurrentPage() {
       return currentPage;
@@ -381,6 +321,11 @@ function () {
     key: "setCurrentPage",
     value: function setCurrentPage(pageNumber) {
       currentPage = pageNumber;
+    }
+  }, {
+    key: "setProducts",
+    value: function setProducts(productsArray) {
+      products = productsArray;
     }
   }]);
 
@@ -467,6 +412,7 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchProduct", function() { return SearchProduct; });
 /* harmony import */ var _builder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./builder */ "./src/builder.js");
+/* harmony import */ var _page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page */ "./src/page.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -474,13 +420,16 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
+
 var SearchProduct =
 /*#__PURE__*/
 function () {
-  function SearchProduct() {
+  function SearchProduct(catalog, paginator) {
     _classCallCheck(this, SearchProduct);
 
     this.element = document.getElementById("search");
+    this.catalog = catalog;
+    this.paginator = paginator;
   }
 
   _createClass(SearchProduct, [{
@@ -508,13 +457,27 @@ function () {
   }, {
     key: "addSearchEventListener",
     value: function addSearchEventListener() {
-      document.getElementById("searchButton").addEventListener("click", this.doSearch, false);
+      document.getElementById("searchButton").addEventListener("click", this.doSearch.bind(this), false);
     }
   }, {
     key: "doSearch",
     value: function doSearch(e) {
-      var searchPharase = document.getElementById("s").value;
-      console.log(searchPharase);
+      var _this = this;
+
+      var searchPhrase = document.getElementById("s");
+      _page__WEBPACK_IMPORTED_MODULE_1__["Page"].setProducts(_page__WEBPACK_IMPORTED_MODULE_1__["Page"].loadProducts().filter(function (el) {
+        return _this.isMatchPhrase(el, searchPhrase.value);
+      }));
+      searchPhrase.value = "";
+      _page__WEBPACK_IMPORTED_MODULE_1__["Page"].setCurrentPage(0);
+      this.catalog.renderProducts(_page__WEBPACK_IMPORTED_MODULE_1__["Page"].getProducts(), _page__WEBPACK_IMPORTED_MODULE_1__["Page"].getCurrentPage(), this.paginator);
+      this.paginator.createPagination(_page__WEBPACK_IMPORTED_MODULE_1__["Page"].getProducts());
+    }
+  }, {
+    key: "isMatchPhrase",
+    value: function isMatchPhrase(element, searchPhrase) {
+      var re = new RegExp(searchPhrase);
+      return re.test(element.name);
     }
   }]);
 

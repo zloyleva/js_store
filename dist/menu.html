@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+
+        a.menu-item{
+            color: #000;
+            text-decoration: unset;
+        }
+        a.active{
+            font-weight: bold;
+            font-style: italic;
+            color: #f00;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <!-- Start main here -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+
+                    <ul>
+                        <li><a class="menu-item" href="#">Home</a></li>
+                        <li>
+                            <a class="menu-item active" href="#">Catalog</a>
+                            <ul>
+                                <li>
+                                    <a class="menu-item" href="#">Category #1</a>
+                                    <ul>
+                                        <li><a class="menu-item" href="#">Product #1-1</a></li>
+                                        <li><a class="menu-item" href="#">Product #1-2</a></li>
+                                        <li><a class="menu-item" href="#">Product #1-3</a></li>
+                                        <li><a class="menu-item" href="#">Product #1-4</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="menu-item" href="#">Category #2</a>
+                                    <ul>
+                                        <li><a class="menu-item" href="#">Product #2-1</a></li>
+                                        <li><a class="menu-item" href="#">Product #2-2</a></li>
+                                        <li><a class="menu-item" href="#">Product #2-3</a></li>
+                                        <li><a class="menu-item" href="#">Product #2-4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="menu-item" href="#">Category #3</a></li>
+                                <li><a class="menu-item" href="#">Category #4</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="menu-item" href="#">About</a></li>
+                        <li><a class="menu-item" href="#">Contacts</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+
+    let a_list = document.getElementsByClassName("menu-item");
+
+    Array.from(a_list).map(el => el.addEventListener("click", e => {
+        e.preventDefault();
+        console.log(e.target);
+        Array.from(a_list).map(el => el.classList.remove("active"));
+        e.target.classList.add("active");
+    }))
+
+</script>
+
+</body>
+</html>

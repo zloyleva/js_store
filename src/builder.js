@@ -1,6 +1,6 @@
 export class Builder{
     static createNewElement(tag, innerContent=null, classStr=null, attr=null){
-        var el = document.createElement(tag);
+        let el = document.createElement(tag);
         el.innerHTML = (innerContent)?innerContent:"";
         el.className = (classStr)?classStr:"";
 

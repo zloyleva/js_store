@@ -176,25 +176,25 @@ function () {
     key: "createCard",
     value: function createCard(product, index) {
       var link = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("a", "Add to cart", "btn btn-primary", [{
-        "name": "href",
-        "value": "#"
+        name: "href",
+        value: "#"
       }]);
       var show_more = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("a", "More", "btn btn-success product_more", [{
-        "name": "href",
-        "value": "#"
+        name: "href",
+        value: "#"
       }, {
-        "name": "data-id",
-        "value": index
+        name: "data-id",
+        value: index
       }]);
       var p = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("p", product.description, "card-text");
       var title = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("h5", product.name, "card-title");
       var cardBody = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("div", null, "card-body"), [title, p, link, show_more]);
       var image = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("img", null, "card-img-top", [{
-        "name": "src",
-        "value": "images/" + product.image
+        name: "src",
+        value: "images/" + product.image
       }, {
-        "name": "alt",
-        "value": product.name
+        name: "alt",
+        value: product.name
       }]);
       var card = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("div", null, "card"), [image, cardBody]);
       var catalogItem = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("div", null, "col-lg-3 col-md-6 mb-2 catalog-item"), [card]);
@@ -215,8 +215,9 @@ function () {
     value: function renderProducts(array_products, current_page, paginator) {
       this.current_page = current_page;
       this.element.innerHTML = "";
+      var i = this.startFromFirstProducts();
 
-      for (var i = this.startFromFirstProducts(); this.isLastProductInPage(i, array_products); i++) {
+      for (i; this.isLastProductInPage(i, array_products); i++) {
         this.element.appendChild(this.createCard(array_products[i], i));
       }
 
@@ -424,18 +425,16 @@ function () {
     value: function createPagination(array_products) {
       var _this = this;
 
-      var link, li, ul;
-      var classNameLi;
       this.pagination.innerHTML = "";
-      ul = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("ul", null, "pagination");
+      var ul = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("ul", null, "pagination");
 
       for (var i = 0; i < Math.ceil(array_products.length / _page__WEBPACK_IMPORTED_MODULE_1__["Page"].getPerPage()); i++) {
-        link = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("a", i + 1, "page-link", [{
-          "name": "data-link",
-          "value": i
+        var link = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("a", i + 1, "page-link", [{
+          name: "data-link",
+          value: i
         }]);
-        classNameLi = i == _page__WEBPACK_IMPORTED_MODULE_1__["Page"].getCurrentPage() ? "page-item active" : "page-item";
-        li = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("li", null, classNameLi), [link]);
+        var classNameLi = "page-item" + (i == _page__WEBPACK_IMPORTED_MODULE_1__["Page"].getCurrentPage() ? " active" : "");
+        var li = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("li", null, classNameLi), [link]);
         ul.appendChild(li);
       }
 
@@ -488,18 +487,18 @@ function () {
     key: "createSearchHTML",
     value: function createSearchHTML() {
       var input = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("input", null, "form-control mr-sm-2", [{
-        "name": "placeholder",
-        "value": "Search"
+        name: "placeholder",
+        value: "Search"
       }, {
-        "name": "type",
-        "value": "search"
+        name: "type",
+        value: "search"
       }, {
-        "name": "id",
-        "value": "s"
+        name: "id",
+        value: "s"
       }]);
       var button = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("button", "Search", "btn btn-outline-success my-2 my-sm-0", [{
-        "name": "id",
-        "value": "searchButton"
+        name: "id",
+        value: "searchButton"
       }]);
       var div = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("div", null, "form-inline my-2 col"), [input, button]);
       var row = _builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].attachChildrenToParent(_builder__WEBPACK_IMPORTED_MODULE_0__["Builder"].createNewElement("div", null, "row"), [div]);

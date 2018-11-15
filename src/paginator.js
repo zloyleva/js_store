@@ -10,17 +10,13 @@ export class Paginator{
     }
 
     createPagination(array_products){
-        let link, li, ul;
-
-        let classNameLi;
-
         this.pagination.innerHTML = "";
-        ul = Builder.createNewElement("ul", null, "pagination");
+        let ul = Builder.createNewElement("ul", null, "pagination");
         for(let i = 0; i < Math.ceil(array_products.length / Page.getPerPage()); i++){
-            link = Builder.createNewElement("a", i+1, "page-link",[{"name":"data-link", "value":i}]);
+            let link = Builder.createNewElement("a", i+1, "page-link",[{name:"data-link", value:i}]);
 
-            classNameLi = (i == Page.getCurrentPage())?"page-item active":"page-item";
-            li = Builder.attachChildrenToParent(Builder.createNewElement("li", null, classNameLi), [link]);
+            let classNameLi = "page-item" + (i == Page.getCurrentPage()?" active":"");
+            let li = Builder.attachChildrenToParent(Builder.createNewElement("li", null, classNameLi), [link]);
 
             ul.appendChild(li);
         }

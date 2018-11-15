@@ -7,11 +7,11 @@ export class SearchProduct {
 
     createSearchHTML(){
         let input = Builder.createNewElement("input", null, "form-control mr-sm-2",[
-                {"name":"placeholder", "value":"Search"},
-                {"name":"type", "value":"search"},
-                {"name":"id", "value":"s"}
+                {name:"placeholder", value:"Search"},
+                {name:"type", value:"search"},
+                {name:"id", value:"s"}
             ]);
-        let button = Builder.createNewElement("button", "Search", "btn btn-outline-success my-2 my-sm-0",[{"name":"id", "value":"searchButton"}]);
+        let button = Builder.createNewElement("button", "Search", "btn btn-outline-success my-2 my-sm-0",[{name:"id", value:"searchButton"}]);
 
         let div = Builder.attachChildrenToParent(Builder.createNewElement("div", null, "form-inline my-2 col"), [input,button]);
         let row = Builder.attachChildrenToParent(Builder.createNewElement("div", null, "row"), [div]);
